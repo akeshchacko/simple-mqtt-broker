@@ -1,7 +1,7 @@
 # simple-mqtt-broker-
 
 1. A Simple working sample for Mqtt protocol with Rest API.
-2. Extract the folder and install the npm dependencies, by `npm install` command.
+2. Checkout the folder and install the npm dependencies, by `npm install` command.
 3. Run the MQTT broker by `node broker.js`. By default the MQQT protocol will run on port 1883
 
    MQTT Broker created using https://www.npmjs.com/package/mosca .
