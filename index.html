@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>webmqtt</title>
+<script src="./node_modules/mqtt/browserMqtt.js"></script>   
+</head>
+<body>
+<h1>hellop</h1>
+<p id="demo">Click me</p>
+<script>
+/* Need to add logic to read device id, which is mac id, from db and listn and
+ * subcribe to it as per the request from customer device selection*/
+var client = mqtt.connect('ws://localhost:3333')
+client.on('connect', function(){
+		console.log('maybe connected')
+		client.subscribe('/listen/606405B915C4'); /*In actual case it will be client.subscribe('/listen/'+ clientid), where client id/mac_id need to be get from DB*/
+		client.on('message', function(topic, payload) {
+			console.log(payload)
+			console.log(payload.toString())
+			alert(payload.toString());
+			});
+		document.getElementById("demo").onclick = function() {client.publish('/publish/606405B915C4', '{"command":"test","data":"random"}')}; /*In actual case it will be client.publish('/publish/'+ clientid), Command should be in json format and will be described in Document*/
+		});
+</script>
+</body>
+</html>   
