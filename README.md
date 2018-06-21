@@ -32,7 +32,7 @@
    http://localhost:8000/send-message/12345678?message=hello
 
 6. An example index.html is added to access these data on html page. Mac ID is hard coded for this page for testing. Need to be make it as dynamic by applying some logic.
-	Currently this page will always publish to the topic /publish/123456789 with data as {"check":"test","qwq":"1236"}
+	Currently this page will always publish to the topic /publish/123456789 with data as {"command":"test","data":"random"}
 	And it will always listen to topic /listen/123456789 and give the data as an alert
 	To add Webpack, use the following steps
 	
